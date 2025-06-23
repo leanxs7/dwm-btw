@@ -66,7 +66,7 @@ static const char *ytmusic  [] = { "youtube-music", NULL };
 
 	/* Rofi apps */
 static const char *launcher [] = { "rofi", "-show", "drun", "-show-icons", NULL };
-static const char *windows  [] = { "rofi", "-show", NULL };
+static const char *windows  [] = { "rofi", "-show", "window", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
