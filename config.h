@@ -53,13 +53,13 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 	/* Terminals */
-#define SHCMD(cmd) { .v = (const char*[]){ "/usr/local/bin/st", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/usr/local/bin/kitty", "-c", cmd, NULL } }
 
 
 /* ---- Commands ---- */
 	/* Apps */
 static const char *terminal [] = { "alacritty", NULL };
-static const char *subterm  [] = { "st", NULL };
+static const char *subterm  [] = { "kitty", NULL };
 static const char *filemgr  [] = { "thunar", NULL };
 static const char *browser  [] = { "chromium", NULL };
 static const char *ytmusic  [] = { "youtube-music", NULL };  
