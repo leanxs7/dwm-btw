@@ -76,8 +76,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = subterm  } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = filemgr  } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser  } },
-	{ MODKEY,             		XK_m,      spawn,          {.v = ytmusic  } },
-	{ MODKEY,                       XK_q,      togglebar,      {0} },  /* hide taskbar */
+	{ MODKEY,                       XK_m,      spawn,          {.v = ytmusic  } },
+	{ MODKEY,                       XK_b,      togglebar,      {0} },  /* hide taskbar */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -85,7 +85,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_c,      killclient,     {0} },
-	{ ALTKEY,             		XK_p,      zoom,           {0} },
+	{ ALTKEY,                       XK_p,      zoom,           {0} },
 	{ ALTKEY,                       XK_Tab,    view,           {0} },
 	{ ALTKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ ALTKEY,                       XK_r,      setlayout,      {.v = &layouts[1]} },
