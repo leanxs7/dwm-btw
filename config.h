@@ -77,7 +77,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = filemgr  } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser  } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = ytmusic  } },
-	{ MODKEY,                       XK_q,      togglebar,      {0} },  /* hide taskbar */
+	{ MODKEY,                       XK_b,      togglebar,      {0} },  /* hide taskbar */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
