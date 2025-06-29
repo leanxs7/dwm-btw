@@ -1,0 +1,21 @@
+Created by s7
+
+# Temp files
+*.o
+*.rej
+*.orig
+*~
+
+# Backups
+*.bak
+*.swp
+
+# Bin files
+dwm
+
+# Log files
+*.log
+
+# Compiling files
+*.out
+
