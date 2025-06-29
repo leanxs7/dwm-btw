@@ -64,7 +64,7 @@ static const Layout layouts[] = {
   /* Apps */
 static const char *terminal [] = { "alacritty", NULL };
 static const char *subterm  [] = { "kitty", NULL };
-static const char *filemgr  [] = { "thunar", NULL };
+static const char *filemg   [] = { "thunar", NULL };
 static const char *browser  [] = { "chromium", NULL };
 static const char *ytmusic  [] = { "youtube-music", NULL };  
 
@@ -123,7 +123,7 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = terminal } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
