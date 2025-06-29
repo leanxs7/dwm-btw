@@ -10,19 +10,23 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_red[]         = "#dd0000";
-
+static const char col_red  []        ="#dd0000";
 static const char *colors[][3]      = {
-/* Colorbar */
-  /*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_red,  col_red},
+	/*               fg         bg         border   */
+	[SchemeNorm]      = { col_gray3, col_gray1,  col_gray2  },
+	[SchemeSel]       = { col_gray4, col_red,    col_red    },
+	[SchemeStatus]    = { col_gray3, col_gray1,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]   = { col_gray4, col_red,    "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsNorm]  = { col_gray3, col_gray1,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+	[SchemeInfoSel]   = { col_gray4, col_red,    "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+	[SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
-/*  tagging are in binaries     1     2     4     8    16    32    64   128 */
+/* tagging; are in binaries     1    2     4     8     16    32    64   128 */
 static const char *tags[] = { " ", " ", "🗁", " ", "📝", " ", " ", " " };
 
 static const Rule rules[] = {
+/* The command to search classes:  xprop | grep "CLASS" */
 	/* class                                  instance    title       tags mask     isfloating   monitor */
 	{ "Chromium",                             NULL,       NULL,           2,            0,           -1 },
 	{ "thunar",                               NULL,       NULL,           4,            0,           -1 },
@@ -46,7 +50,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask /* Super Key */
-#define ALTKEY Mod1Mask /* Alt Key */
+#define ALTKEY Mod1Mask /*  Alt Key  */
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -54,12 +58,10 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-	/* Terminals */
-#define SHCMD(cmd) { .v = (const char*[]){ "/usr/local/bin/kitty", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-
-/* ---- Commands ---- */
-	/* Apps */
+/* --- Commands --- */
+  /* Apps */
 static const char *terminal [] = { "alacritty", NULL };
 static const char *subterm  [] = { "kitty", NULL };
 static const char *filemgr  [] = { "thunar", NULL };
@@ -70,29 +72,31 @@ static const char *ytmusic  [] = { "youtube-music", NULL };
 static const char *launcher [] = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *windows  [] = { "rofi", "-show", "window", NULL };
 
+
+/* --- Keybidings --- */
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = launcher } },
-	{ MODKEY,                       XK_w,      spawn,          {.v = windows  } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = terminal } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = subterm  } },
-	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = filemgr  } },
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = filemg   } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser  } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = ytmusic  } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },  /* hide taskbar */
+	{ MODKEY,                       XK_w,      spawn,          {.v = windows  } },
+	{ MODKEY,                       XK_b,      togglebar,      {0} },  /* Hide the taskbar */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_c,      killclient,     {0} },
 	{ ALTKEY,                       XK_p,      zoom,           {0} },
 	{ ALTKEY,                       XK_Tab,    view,           {0} },
+	{ MODKEY,                       XK_c,      killclient,     {0} },
 	{ ALTKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ ALTKEY,                       XK_r,      setlayout,      {.v = &layouts[1]} },
+	{ ALTKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ ALTKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ ALTKEY,                       XK_space,  setlayout,      {0} },  /* {0} } significa regresar al ultimo */
+	{ ALTKEY,                       XK_space,  setlayout,      {0} },
 	{ ALTKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
@@ -119,7 +123,7 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = terminal} },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
@@ -128,4 +132,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
