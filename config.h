@@ -22,17 +22,19 @@ static const char *colors[][3]      = {
 	[SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
-/* tagging; are in binaries     1    2     4     8     16    32    64   128 */
+/* tagging;                     0    1     2     3     4     5     6     7 */
+/*                              1    2     3     4     5     6     7     8 */
 static const char *tags[] = { " ", " ", "🗁", " ", "📝", " ", " ", " " };
 
 static const Rule rules[] = {
 /* The command to search classes:  xprop | grep "CLASS" */
 	/* class                                  instance    title       tags mask     isfloating   monitor */
-	{ "Chromium",                             NULL,       NULL,           2,            0,           -1 },
-	{ "thunar",                               NULL,       NULL,           4,            0,           -1 },
-	{ "nvim",                                 NULL,       NULL,           8,            0,           -1 },
-	{ "obsidian",                             NULL,       NULL,          16,            0,           -1 },
-	{ "com.github.th_ch.youtube_music",       NULL,       NULL,          32,            0,           -1 },
+	{ "Chromium",                             NULL,       NULL,        1 << 1,          0,           -1 },
+	{ "thunar",                               NULL,       NULL,        1 << 2,          0,           -1 },
+	{ "nvim",                                 NULL,       NULL,        1 << 3,          0,           -1 },
+	{ "obsidian",                             NULL,       NULL,        1 << 4,          0,           -1 },
+	{ "com.github.th_ch.youtube_music",       NULL,       NULL,        1 << 5,          0,           -1 },
+//{ "Spotify",                              NULL,       NULL,  (1 << 5) | (1 << 6),   0,           -1 },  // Will show in tags 6 and 7
 };
 
 /* layout(s) */
