@@ -24,13 +24,13 @@ static const char *colors[][3]      = {
 
 /* tagging;                     0    1     2     3     4     5     6     7 */
 /*                              1    2     3     4     5     6     7     8 */
-static const char *tags[] = { " ", " ", "🗁", " ", "📝", " ", " ", " " };
+static const char *tags[] = { " ", " ", "🗁", " ", "📝", " ", " ", " ", " " };
 
 static const Rule rules[] = {
 /* The command to search classes:  xprop | grep "CLASS" */
 	/* class                                  instance    title       tags mask     isfloating   monitor */
 	{ "Chromium",                             NULL,       NULL,        1 << 1,          0,           -1 },
-	{ "thunar",                               NULL,       NULL,        1 << 2,          0,           -1 },
+	{ "Thunar",                               NULL,       NULL,        1 << 2,          0,           -1 },
 	{ "nvim",                                 NULL,       NULL,        1 << 3,          0,           -1 },
 	{ "obsidian",                             NULL,       NULL,        1 << 4,          0,           -1 },
 	{ "com.github.th_ch.youtube_music",       NULL,       NULL,        1 << 5,          0,           -1 },
