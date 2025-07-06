@@ -15,11 +15,11 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm]      = { col_gray3, col_gray1,  col_gray2  },
 	[SchemeSel]       = { col_gray4, col_red,    col_red    },
-	[SchemeStatus]    = { col_gray3, col_gray1,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]   = { col_gray4, col_red,    "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
-	[SchemeTagsNorm]  = { col_gray3, col_gray1,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
-	[SchemeInfoSel]   = { col_gray4, col_red,    "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
-	[SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+	[SchemeStatus]    = { col_gray3, col_gray1,  "#dd0000"  }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]   = { col_gray4, col_red,    "#dd0000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsNorm]  = { col_gray3, col_gray1,  "#dd0000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+	[SchemeInfoSel]   = { col_gray4, col_red,    "#dd0000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+	[SchemeInfoNorm]  = { col_gray3, col_gray1,  "#dd0000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging;                     0    1     2     3     4     5     6     7 */
@@ -69,6 +69,7 @@ static const char *subterm  [] = { "kitty", NULL };
 static const char *filemg   [] = { "thunar", NULL };
 static const char *browser  [] = { "chromium", NULL };
 static const char *ytmusic  [] = { "youtube-music", NULL };  
+// static const char *music    [] = { "ncmpcpp", NULL };  
 
 	/* Rofi apps */
 static const char *launcher [] = { "rofi", "-show", "drun", "-show-icons", NULL };
@@ -83,6 +84,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = subterm  } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = filemg   } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser  } },
+	// { MODKEY|ShiftMask,             XK_m,      spawn,          {.v = music    } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = ytmusic  } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = windows  } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },  /* Hide the taskbar */
