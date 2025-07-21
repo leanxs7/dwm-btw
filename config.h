@@ -23,7 +23,6 @@ static const char *colors[][3]      = {
 };
 
 /* tagging;                     0    1     2     3     4     5     6     7 */
-/*                              1    2     3     4     5     6     7     8 */
 static const char *tags[] = { " ", " ", "🗁", " ", "📝", " ", " ", " "};
 
 static const Rule rules[] = {
@@ -34,6 +33,7 @@ static const Rule rules[] = {
 	{ "nvim",                                 NULL,       NULL,        1 << 3,          0,           -1 },
 	{ "obsidian",                             NULL,       NULL,        1 << 4,          0,           -1 },
 	{ "com.github.th_ch.youtube_music",       NULL,       NULL,        1 << 5,          0,           -1 },
+	{ "pavucontrol",                          NULL,       NULL,        1 << 7,          0,           -1 },
 //{ "Spotify",                              NULL,       NULL,  (1 << 5) | (1 << 6),   0,           -1 },  // Will show in tags 6 and 7
 };
 
@@ -62,8 +62,7 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-/* --- Commands --- */
-  /* Apps */
+  /* Diary apps */
 static const char *terminal [] = { "alacritty", NULL };
 static const char *subterm  [] = { "kitty", NULL };
 static const char *filemg   [] = { "thunar", NULL };
@@ -74,18 +73,19 @@ static const char *ytmusic  [] = { "youtube-music", NULL };
 	/* Rofi apps */
 static const char *launcher [] = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *windows  [] = { "rofi", "-show", "window", NULL };
+static const char *emojis   [] = { "rofi", "-show", "window", NULL };
 
 
 /* --- Keybidings --- */
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = launcher } },
+	{ MODKEY,                       XK_period, spawn,          {.v = emojis   } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = terminal } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = subterm  } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = filemg   } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser  } },
-	// { MODKEY|ShiftMask,             XK_m,      spawn,          {.v = music    } },
-	{ MODKEY,                       XK_m,      spawn,          {.v = ytmusic  } },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = ytmusic  } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = windows  } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },  /* Hide the taskbar */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -108,16 +108,16 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	TAGKEYS(                        XK_1,   /* tag#1 */                0)
+	TAGKEYS(                        XK_2,   /* tag#2 */                1)
+	TAGKEYS(                        XK_3,   /* tag#3 */                2)
+	TAGKEYS(                        XK_4,   /* tag#4 */                3)
+	TAGKEYS(                        XK_5,   /* tag#5 */                4)
+	TAGKEYS(                        XK_6,   /* tag#6 */                5)
+	TAGKEYS(                        XK_7,   /* tag#7 */                6)
+	TAGKEYS(                        XK_8,   /* tag#8 */                7)
+	TAGKEYS(                        XK_9,   /* tag#9 */                8)
+	{ MODKEY|ShiftMask,             XK_q,      quit,                  {0} },
 };
 
 /* button definitions */
