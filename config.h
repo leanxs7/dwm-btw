@@ -112,25 +112,25 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          {.v = windows  } },
 
 // Windows management
-	{ MODKEY,                       XK_b,      togglebar,      {0} },  /* Hide the taskbar */
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+	{ ALTKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ ALTKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+  { MODKEY,                       XK_b,      togglebar,      {0} },  /* Hide the taskbar */
+	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } }, 
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_l,      zoom,           {0} },
-	{ MODKEY|ShiftMask,             XK_h,      view,           {0} },
+	{ MODKEY|ShiftMask,             XK_l,      zoom,           {0} }, 
+	{ MODKEY|ShiftMask,             XK_h,      view,           {0} }, 
 
   // Gaps
-	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_o,      incrogaps,      {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
+	{ ALTKEY|ControlMask,           XK_u,      incrgaps,       {.i = +1 } },
+	{ ALTKEY|ControlMask|ShiftMask, XK_u,      incrgaps,       {.i = -1 } },
+	{ ALTKEY|ControlMask,           XK_i,      incrigaps,      {.i = +1 } },
+	{ ALTKEY|ControlMask|ShiftMask, XK_i,      incrigaps,      {.i = -1 } },
+	{ ALTKEY|ControlMask,           XK_o,      incrogaps,      {.i = +1 } },
+	{ ALTKEY|ControlMask|ShiftMask, XK_o,      incrogaps,      {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_6,      incrihgaps,     {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_7,      incrivgaps,     {.i = +1 } },
