@@ -112,6 +112,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          {.v = windows  } },
 
 // Windows management
+	{ MODKEY,                       XK_f,      togglefullscr,  {0} }, /* fullscreen */
 	{ ALTKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ ALTKEY,                       XK_d,      incnmaster,     {.i = -1 } },
   { MODKEY,                       XK_b,      togglebar,      {0} },  /* Hide the taskbar */
@@ -162,7 +163,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_c,      killclient,     {0} },
   // { MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
 
-  // Tags
+// Tags
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1) 
   TAGKEYS(                        XK_3,                      2)
