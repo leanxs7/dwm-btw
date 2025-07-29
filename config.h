@@ -159,9 +159,9 @@ static const Key keys[] = {
 	{ ALTKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
 // System
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, /* Restart */
+	{ MODKEY,                       XK_q,      quit,           {1} }, /* Refresh */
 	{ MODKEY,                       XK_c,      killclient,     {0} },
-  // { MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
 
 // Tags
 	TAGKEYS(                        XK_1,                      0)
