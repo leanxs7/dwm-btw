@@ -8,6 +8,7 @@ static const unsigned int gappiv    = 10;       /* vert inner gap between window
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 10;        /* 2 is the default spacing around the bar's font */
@@ -17,7 +18,6 @@ static const char color2[]       = "#444444";
 static const char color3[]       = "#bbbbbb";
 static const char color4[]       = "#eeeeee";
 static const char color5[]       = "#dd0000"; /* red  */
-
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm]     = { color3, color1,  color2     },
@@ -38,15 +38,16 @@ static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the b
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 static const Rule rules[] = {
-/* The command to search classes:  xprop | grep "CLASS" */
-	/* class                                  instance    title       tags mask     isfloating   monitor */
-	{ "Chromium",                             NULL,       NULL,        1 << 1,          0,           -1 },
-	{ "Thunar",                               NULL,       NULL,        1 << 2,          0,           -1 },
-	{ "nvim",                                 NULL,       NULL,        1 << 3,          0,           -1 },
-	{ "obsidian",                             NULL,       NULL,        1 << 4,          0,           -1 },
-	{ "com.github.th_ch.youtube_music",       NULL,       NULL,        1 << 5,          0,           -1 },
-	{ "pavucontrol",                          NULL,       NULL,        1 << 7,          0,           -1 },
-//{ "Spotify",                              NULL,       NULL,  (1 << 5) | (1 << 6),   0,           -1 },  // Will show in tags 6 and 7
+  /* The command to search classes:  xprop | grep "CLASS" */
+  /* class                                instance  title           tags mask         isfloating  isterminal  noswallow  monitor */
+	{ "Chromium",                           NULL,     NULL,           1 << 1,            0,          0,           0,        -1 },
+	{ "Thunar",                             NULL,     NULL,           1 << 2,            0,          0,           0,        -1 },
+	{ "obsidian",                           NULL,     NULL,           1 << 4,            0,          0,           0,        -1 },
+	{ "com.github.th_ch.youtube_music",     NULL,     NULL,           1 << 5,            0,          0,           0,        -1 },
+	{ "pavucontrol",                        NULL,     NULL,           (1 << 7) | (0),    0,          0,           0,        -1 },
+	{ "Alacritty",                          NULL,     NULL,           0,                 0,          1,           0,        -1 },
+	{ "kitty",                              NULL,     NULL,           0,                 0,          1,           0,        -1 },
+	{ NULL,        NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
