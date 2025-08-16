@@ -49,6 +49,7 @@ static const Rule rules[] = {
 	{ "Thunar",                             NULL,     NULL,           1 << 2,            0,          0,           0,        -1 },
 	{ "obsidian",                           NULL,     NULL,           1 << 4,            0,          0,           0,        -1 },
 	{ "com.github.th_ch.youtube_music",     NULL,     NULL,           1 << 5,            0,          0,           0,        -1 },
+	{ "discord",                            NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
 	{ "pavucontrol",                        NULL,     NULL,           (1 << 7) | (0),    0,          0,           0,        -1 },
 	{ "Alacritty",                          NULL,     NULL,           0,                 0,          1,           0,        -1 },
 	{ "kitty",                              NULL,     NULL,           0,                 0,          1,           0,        -1 },
