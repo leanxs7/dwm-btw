@@ -13,8 +13,10 @@ static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */ 
 static const int refreshrate        = 60;       /* Update rate for drag and resize events, in updates (frames) per second */
 static const int user_bh            = 10;       /* 2 is the default spacing around the bar's font */
-static char font[]                  = "monospace:size=16"; 
-static const char *fonts[]          = { "monospace:size=16" };
+static char font[]                  = "JetBrainsMono Nerd Font:size=16"; 
+// static const char *fonts[]          = { "monospace:size=16" };
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=16" };
+
 
 // Colors
 static char normbgcolor[]           = "#222222";
@@ -35,7 +37,7 @@ static char *colors[][3] = {
  };
 
 /* tagging;                     0    1     2     3     4     5     6     7 */
-static const char *tags[] = { " ", " ", "🗁", " ", "📝", " ", " ", " "};
+static const char *tags[] = { " ", " ", " ", " ", "󰠮 ", " ", " ", " "};
 
 static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
