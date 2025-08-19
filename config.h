@@ -11,7 +11,7 @@ static int smartgaps                = 0;        /* 1 means no outer gap when the
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */ 
-static const int vertpad            = 5;       /* vertical padding of bar */
+static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 5;       /* horizontal padding of bar */
 static const int refreshrate        = 60;       /* Update rate for drag and resize events, in updates (frames) per second */
 static const int user_bh            = 10;       /* 2 is the default spacing around the bar's font */
@@ -151,8 +151,7 @@ static const Key keys[] = {
 // Windows management
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} }, /* fullscreen */
 	{ ALTKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ ALTKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-  { MODKEY,                       XK_b,      togglebar,      {0} },  /* Hide the taskbar */
+	{ ALTKEY,                       XK_d,      incnmaster,     {.i = -1 } }, { MODKEY,                       XK_b,      togglebar,      {0} },  /* Hide the taskbar */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } }, 
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -201,24 +200,26 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_c,      killclient,     {0} },
 
 // Resize floating windows
-	{ ALTKEY,                       XK_j,  moveresize,     {.v = "0x 25y 0w 0h" } },
-	{ ALTKEY,                       XK_k,  moveresize,     {.v = "0x -25y 0w 0h" } },
-	{ ALTKEY,                       XK_l,  moveresize,     {.v = "25x 0y 0w 0h" } },
-	{ ALTKEY,                       XK_h,  moveresize,     {.v = "-25x 0y 0w 0h" } },
-	{ ALTKEY|ShiftMask,             XK_j,  moveresize,     {.v = "0x 0y 0w 25h" } },
-	{ ALTKEY|ShiftMask,             XK_k,  moveresize,     {.v = "0x 0y 0w -25h" } },
-	{ ALTKEY|ShiftMask,             XK_l,  moveresize,     {.v = "0x 0y 25w 0h" } },
-	{ ALTKEY|ShiftMask,             XK_h,  moveresize,     {.v = "0x 0y -25w 0h" } },
-	{ ALTKEY|ControlMask,           XK_k,  moveresizeedge, {.v = "t"} },
-	{ ALTKEY|ControlMask,           XK_j,  moveresizeedge, {.v = "b"} },
-	{ ALTKEY|ControlMask,           XK_h,  moveresizeedge, {.v = "l"} },
-	{ ALTKEY|ControlMask,           XK_l,  moveresizeedge, {.v = "r"} },
-	{ ALTKEY|ShiftMask,             XK_w,  moveresizeedge, {.v = "T"} },
-	{ ALTKEY|ShiftMask,             XK_s,  moveresizeedge, {.v = "B"} },
-	{ ALTKEY|ShiftMask,             XK_a,  moveresizeedge, {.v = "L"} },
-	{ ALTKEY|ShiftMask,             XK_d,  moveresizeedge, {.v = "R"} },
+	{ ALTKEY,                       XK_j,    moveresize,     {.v = "0x 25y 0w 0h" } },
+	{ ALTKEY,                       XK_k,    moveresize,     {.v = "0x -25y 0w 0h" } },
+	{ ALTKEY,                       XK_l,    moveresize,     {.v = "25x 0y 0w 0h" } },
+	{ ALTKEY,                       XK_h,    moveresize,     {.v = "-25x 0y 0w 0h" } },
+	{ ALTKEY|ShiftMask,             XK_j,    moveresize,     {.v = "0x 0y 0w 25h" } },
+	{ ALTKEY|ShiftMask,             XK_k,    moveresize,     {.v = "0x 0y 0w -25h" } },
+	{ ALTKEY|ShiftMask,             XK_l,    moveresize,     {.v = "0x 0y 25w 0h" } },
+	{ ALTKEY|ShiftMask,             XK_h,    moveresize,     {.v = "0x 0y -25w 0h" } },
+	{ ALTKEY|ControlMask,           XK_k,    moveresizeedge, {.v = "t"} },
+	{ ALTKEY|ControlMask,           XK_j,    moveresizeedge, {.v = "b"} },
+	{ ALTKEY|ControlMask,           XK_h,    moveresizeedge, {.v = "l"} },
+	{ ALTKEY|ControlMask,           XK_l,    moveresizeedge, {.v = "r"} },
+	{ ALTKEY|ShiftMask,             XK_w,    moveresizeedge, {.v = "T"} },
+	{ ALTKEY|ShiftMask,             XK_s,    moveresizeedge, {.v = "B"} },
+	{ ALTKEY|ShiftMask,             XK_a,    moveresizeedge, {.v = "L"} },
+	{ ALTKEY|ShiftMask,             XK_d,    moveresizeedge, {.v = "R"} },
 
 // Tags
+	{ ALTKEY|ShiftMask,             XK_Tab,  rotatetags,     {.i = -1 } },
+	{ ALTKEY,                       XK_Tab,  rotatetags,     {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1) 
   TAGKEYS(                        XK_3,                      2)
