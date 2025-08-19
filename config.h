@@ -17,7 +17,6 @@ static char font[]                  = "JetBrainsMono Nerd Font:size=16";
 // static const char *fonts[]          = { "monospace:size=16" };
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=16" };
 
-
 // Colors
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -39,7 +38,7 @@ static char *colors[][3] = {
 /* tagging;                     0    1     2     3     4     5     6     7 */
 static const char *tags[] = { " ", " ", " ", " ", "󰠮 ", " ", " ", " "};
 
-static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinepad	= 3;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
 static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
@@ -161,7 +160,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      zoom,           {0} }, 
 	{ MODKEY|ShiftMask,             XK_h,      view,           {0} }, 
 
-  // Gaps
+// Gaps
 	{ ALTKEY|ControlMask,           XK_u,      incrgaps,       {.i = +1 } },
 	{ ALTKEY|ControlMask|ShiftMask, XK_u,      incrgaps,       {.i = -1 } },
 	{ ALTKEY|ControlMask,           XK_i,      incrigaps,      {.i = +1 } },
@@ -179,7 +178,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 
-  // My layouts
+// My layouts
 	{ ALTKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, /* tile layout        */
 	{ ALTKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} }, /* monocle layout     */
 	{ ALTKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} }, /* spiral layout      */
@@ -198,6 +197,24 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, /* Restart */
 	{ MODKEY,                       XK_q,      quit,           {1} }, /* Refresh */
 	{ MODKEY,                       XK_c,      killclient,     {0} },
+
+// Resize floating windows
+	{ ALTKEY,                       XK_j,  moveresize,     {.v = "0x 25y 0w 0h" } },
+	{ ALTKEY,                       XK_k,  moveresize,     {.v = "0x -25y 0w 0h" } },
+	{ ALTKEY,                       XK_l,  moveresize,     {.v = "25x 0y 0w 0h" } },
+	{ ALTKEY,                       XK_h,  moveresize,     {.v = "-25x 0y 0w 0h" } },
+	{ ALTKEY|ShiftMask,             XK_j,  moveresize,     {.v = "0x 0y 0w 25h" } },
+	{ ALTKEY|ShiftMask,             XK_k,  moveresize,     {.v = "0x 0y 0w -25h" } },
+	{ ALTKEY|ShiftMask,             XK_l,  moveresize,     {.v = "0x 0y 25w 0h" } },
+	{ ALTKEY|ShiftMask,             XK_h,  moveresize,     {.v = "0x 0y -25w 0h" } },
+	{ ALTKEY|ControlMask,           XK_k,  moveresizeedge, {.v = "t"} },
+	{ ALTKEY|ControlMask,           XK_j,  moveresizeedge, {.v = "b"} },
+	{ ALTKEY|ControlMask,           XK_h,  moveresizeedge, {.v = "l"} },
+	{ ALTKEY|ControlMask,           XK_l,  moveresizeedge, {.v = "r"} },
+	{ ALTKEY|ShiftMask,             XK_w,  moveresizeedge, {.v = "T"} },
+	{ ALTKEY|ShiftMask,             XK_s,  moveresizeedge, {.v = "B"} },
+	{ ALTKEY|ShiftMask,             XK_a,  moveresizeedge, {.v = "L"} },
+	{ ALTKEY|ShiftMask,             XK_d,  moveresizeedge, {.v = "R"} },
 
 // Tags
 	TAGKEYS(                        XK_1,                      0)
