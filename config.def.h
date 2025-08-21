@@ -37,6 +37,13 @@ static char *colors[][3] = {
        [SchemeInfoNorm] = { normfgcolor, normbgcolor, "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
  };
 
+static const char *tagsel[][3] = {
+   /*   fg         bg    */
+  { normfgcolor, normbgcolor }, /* norm */
+  { selfgcolor,  selbgcolor  }, /* sel */
+  { selbgcolor,  normbgcolor }, /* occ but not sel */
+  { selbgcolor,  normfgcolor }, /* has pinned tag */
+};
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
