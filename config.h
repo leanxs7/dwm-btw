@@ -116,6 +116,7 @@ static const char *subterm  [] = { "kitty", NULL };
 static const char *filemg   [] = { "thunar", NULL };
 static const char *browser  [] = { "chromium", NULL };
 static const char *ytmusic  [] = { "youtube-music", NULL };  
+static const char *screensh [] = { "flameshot", "gui", NULL}; 
 // static const char *music    [] = { "ncmpcpp", NULL };  
 
 /* --- Rofi apps --- */
@@ -155,12 +156,14 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = filemg   } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser  } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = ytmusic  } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screensh } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = windows  } },
 
 // Windows management
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} }, /* fullscreen */
 	{ ALTKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ ALTKEY,                       XK_d,      incnmaster,     {.i = -1 } }, { MODKEY,                       XK_b,      togglebar,      {0} },  /* Hide the taskbar */
+	{ ALTKEY,                       XK_d,      incnmaster,     {.i = -1 } }, 
+  { MODKEY,                       XK_b,      togglebar,      {0} },  /* Hide the taskbar */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } }, 
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
