@@ -16,7 +16,6 @@ static const int sidepad            = 5;       /* horizontal padding of bar */
 static const int refreshrate        = 60;       /* Update rate for drag and resize events, in updates (frames) per second */
 static const int user_bh            = 10;       /* 2 is the default spacing around the bar's font */
 static char font[]                  = "JetBrainsMono Nerd Font:size=16"; 
-// static const char *fonts[]          = { "monospace:size=16" };
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=16" };
 
 // Colors
