@@ -121,7 +121,7 @@ static const char *screensh [] = { "flameshot", "gui", NULL};
 /* --- Rofi apps --- */
 static const char *launcher [] = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *windows  [] = { "rofi", "-show", "window", NULL };
-static const char *emojis   [] = { "rofimoji", NULL };
+static const char *emojis   [] = { "rofimoji", "-f", "all", NULL };
 
 /*
  * Xresources preferences to load at startup
