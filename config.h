@@ -45,7 +45,7 @@ static const char *tagsel[][3] = {
 };
 
 /* tagging;                     0    1     2     3     4     5     6     7 */
-static const char *tags[] = { " ", " ", " ", " ", "󰠮 ", " ", " ", " "};
+static const char *tags[] = { " ", " ", " ", " ", "󰠮 ", " ", " ", " "};
 
 static const unsigned int ulinepad	= 3;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
