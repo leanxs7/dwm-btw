@@ -116,6 +116,7 @@ static const char *filemg   [] = { "thunar", NULL };
 static const char *browser  [] = { "chromium", NULL };
 static const char *ytmusic  [] = { "youtube-music", NULL };  
 static const char *screensh [] = { "flameshot", "gui", NULL}; 
+static const char *xcolorpk [] = { "/home/s7/.config/suckless/scripts/apps/colorpicker.sh", NULL}; 
 // static const char *music    [] = { "ncmpcpp", NULL };  
 
 /* --- Rofi apps --- */
@@ -157,6 +158,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = ytmusic  } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screensh } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = windows  } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = xcolorpk } },
 
 // Windows management
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} }, /* fullscreen */
