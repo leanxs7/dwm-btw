@@ -2318,11 +2318,14 @@ togglefloating(const Arg *arg)
 	if (selmon->sel->isfullscreen) /* no support for fullscreen windows */
 		return;
 	selmon->sel->isfloating = !selmon->sel->isfloating || selmon->sel->isfixed;
-	if (selmon->sel->isfloating)
+	if (selmon->sel->isfloating) {
 		/* restore last known float dimensions */
 		resize(selmon->sel, selmon->sel->sfx, selmon->sel->sfy,
 		       selmon->sel->sfw, selmon->sel->sfh, False);
-	else {
+    /* floating windows always center */
+    selmon->sel->x = selmon->sel->mon->mx + (selmon->sel->mon->mw - WIDTH(selmon->sel)) / 2;
+    selmon->sel->y = selmon->sel->mon->my + (selmon->sel->mon->mh - HEIGHT(selmon->sel)) / 2;
+  } else {
 		/* save last known float dimensions */
 		selmon->sel->sfx = selmon->sel->x;
 		selmon->sel->sfy = selmon->sel->y;
