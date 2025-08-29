@@ -62,6 +62,7 @@ static const Rule rules[] = {
 	{ "Spotify",                            NULL,     NULL,           1 << 5,            0,          0,           0,        -1 },
 	{ "euphonica",                          NULL,     NULL,           1 << 5,            0,          0,           0,        -1 },
 	{ "discord",                            NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
+	{ "todoist-nativefier-6c11dd",          NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
 	{ "pavucontrol",                        NULL,     NULL,           (1 << 7) | (0),    0,          0,           0,        -1 },
 	{ "Alacritty",                          NULL,     NULL,           0,                 0,          1,           0,        -1 },
 	{ "kitty",                              NULL,     NULL,           0,                 0,          1,           0,        -1 },
