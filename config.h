@@ -45,7 +45,7 @@ static const char *tagsel[][3] = {
 };
 
 /* tagging;                     0    1     2     3     4     5     6     7 */
-static const char *tags[] = { " ", " ", " ", " ", "󰠮 ", " ", " ", " "};
+static const char *tags[] = { " ", " ", " ", " ", "󰠮 ", " ", " ", " "};
 
 static const unsigned int ulinepad	= 3;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
@@ -63,7 +63,7 @@ static const Rule rules[] = {
 	{ "euphonica",                          NULL,     NULL,           1 << 5,            0,          0,           0,        -1 },
 	{ "discord",                            NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
 	{ "todoist-nativefier-6c11dd",          NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
-	{ "pavucontrol",                        NULL,     NULL,           (1 << 7) | (0),    0,          0,           0,        -1 },
+	{ "pavucontrol",                        NULL,     NULL,          (1 << 7) | (0),     0,          0,           0,        -1 },
 	{ "Alacritty",                          NULL,     NULL,           0,                 0,          1,           0,        -1 },
 	{ "kitty",                              NULL,     NULL,           0,                 0,          1,           0,        -1 },
 	{ NULL,        NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
@@ -121,7 +121,7 @@ static const char *xcolorpk [] = { "/home/s7/.config/suckless/scripts/apps/color
 // static const char *music    [] = { "ncmpcpp", NULL };  
 
 /* --- Rofi apps --- */
-static const char *launcher [] = { "rofi", "-show", "drun", "-show-icons", NULL };
+static const char *launcher [] = { "/home/s7/.config/suckless/scripts/rofi/launcher.sh", NULL };
 static const char *windows  [] = { "rofi", "-show", "window", NULL };
 static const char *emojis   [] = { "rofimoji", "-f", "all", NULL };
 
