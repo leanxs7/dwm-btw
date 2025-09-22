@@ -1,48 +1,133 @@
-dwm - dynamic window manager
-============================
-dwm is an extremely fast, small, and dynamic window manager for X.
+# dwm-btw
 
+> My personal customized dwm (dynamic window manager) based on suckless/dwm.
 
-Requirements
-------------
-In order to build dwm you need the Xlib header files.
+![preview](assets/preview.png)
 
+## Description
 
-Installation
-------------
-Edit config.mk to match your local setup (dwm is installed into
-the /usr/local namespace by default).
+This repo contains my customized version of `dwm` (applied patches, settings, etc). Is for users who wants a lightweight and pretty `dwm`.
 
-Afterwards enter the following command to build and install dwm (if
-necessary as root):
+---
 
-    make clean install
+## Content 
 
+* `dwm/` — main code (c, headers)
+* `patches/` — applied patches 
+* `assets/` — screenshots, gifs and logos 
+* `README` — this file
+* `LICENSE` — licence (MIT)
 
-Running dwm
------------
-Add the following line to your .xinitrc to start dwm using startx:
+---
 
-    exec dwm
+## Features
 
-In order to connect dwm to a specific display, make sure that
-the DISPLAY environment variable is set correctly, e.g.:
+* Short list of applied patches. 
+* Settings in `config.def.h` with shortcuts and windows rules
+* Minimal Makefile to compile and clean.
 
-    DISPLAY=foo.bar:1 exec dwm
+---
 
-(This will start dwm on display :1 of the host foo.bar.)
+## Installation (fast)
 
-In order to display status info in the bar, you can do something
-like this in your .xinitrc:
+```bash
+# Clone the repo
+git clone https://github.com/leanxs7/dwm-btw.git
+cd dwm-btw
+# Compile and install (require libx11, libXinerama, etc.)
+sudo make clean install
+```
 
-    while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
-    do
-    	sleep 1
-    done &
-    exec dwm
+---
 
+## Dependencies (Arch Linux)
 
-Configuration
--------------
-The configuration of dwm is done by creating a custom config.h
-and (re)compiling the source code.
+* `xcb-util`, `libx11`, `libxinerama`, `libxft`
+
+---
+
+## Patching and configuration
+
+### Patching 
+
+#### Workflow
+
+- **Swallow**: replaces the terminal with the launched app (and returns the terminal when the app closes).
+- **Autostart**: allows running scripts when dwm starts.
+
+- **RestartSig**: restarts dwm without logging out of the session.
+
+- **MoveStack**: reorders windows in the stack with keybindings.
+
+- **CycleLayouts**: cycles through layouts in sequence.
+
+- **AttachAside**: new windows open next to the master area.
+
+- **PerTag**: each tag saves its layout/configuration.
+
+- **Warp**: moves the pointer to the window selected via keyboard.
+
+- **SaveFloats**: remembers position/size of floating windows.
+
+- **MoveResize**: move/resize floating windows with the keyboard.
+
+- **RotateTags**: rotate tags left/right.
+
+#### Aestethics
+
+- **VanityGaps**: gaps between windows and additional layouts.
+- **ActualFullScreen**: true fullscreen for the master window.
+- **NoBorder**: hide borders when there is only one window.
+- **ColorBar**: change fg/bg colors of bar elements.
+- **Status2d**: colors in the statusbar using escape sequences.
+- **UnderlineTags**: underline the active tag.
+- **NoTitle**: remove titles from the bar.
+- **BarHeight**: adjust the height of the bar.
+- **BarPadding**: extra padding in the bar.
+- **AlwaysCenter**: floating windows appear centered.
+- **Xresources**: manage options from `$XDG_CONFIG_HOME/X11/Xresources`.
+- **TagColorScheme**: color scheme per tag instead of boxed tags.
+- **ToggleFloatingCenter**: keybinding to center floating windows.
+
+#### How to apply a patch manually:
+
+```bash
+cd dwm-btw
+patch -p1 < ../patches/name-patch.diff
+sudo make clean install 
+```
+
+---
+
+## Screenshots / GIFs
+
+![1](assets/dwm.GIF)
+
+![1](assets/dwm.png)
+
+![preview](assets/preview.png)
+
+---
+
+---
+
+## Contribuctions
+
+To contribute to this project follow the next steps:
+
+1. Fork
+2. Create a new branch: `git checkout -b feature/the-feature`
+3. Make changes and `git commit -am "Commit X"`
+4. Push
+
+---
+
+## Créditos
+
+Based in `suckless.org` — thanks to the `dwm` comunity. 
+
+---
+
+## Notes
+
+- Delete the `config.h` before compile. 
