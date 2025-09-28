@@ -4,6 +4,20 @@
 
 ![preview](assets/preview.png)
 
+## Table of Contents
+
+- [Description](#Description)
+- [Content](#Content)
+- [Features](#Features)
+- [Installation](#Installation)
+- [Dependencies](#Dependencies)
+- [Patching and configuration](#Patching and configuration)
+- [Contributions](#Contributions)
+- [Credits](#Credits)
+- [Notes](#Notes)
+
+---
+
 ## Description
 
 This repo contains my customized version of `dwm` (applied patches, settings, etc). Is for users who wants a lightweight and pretty `dwm`.
@@ -101,9 +115,7 @@ sudo make clean install
 
 ## Screenshots / GIFs
 
-![1](assets/dwm.GIF)
-
-![1](assets/dwm.png)
+![dwm](assets/dwm.png)
 
 ![preview](assets/preview.png)
 
