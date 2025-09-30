@@ -132,6 +132,8 @@ sudo make clean install
 
 ## Screenshots / GIFs
 
+<video src="assets/dwm.mp4">video</video>
+
 ![dwm](assets/dwm.png)
 
 ![dwm](assets/dwm_programming.png)
