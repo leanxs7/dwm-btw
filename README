@@ -42,21 +42,38 @@ This repo contains my customized version of `dwm` (applied patches, settings, et
 
 ---
 
-## Installation (fast)
+## Installation (full)
 
+### Arch 
 ```bash
-# Clone the repo
-git clone https://github.com/leanxs7/dwm-btw.git
-cd dwm-btw
-# Compile and install (require libx11, libXinerama, etc.)
-sudo make clean install
+# Install dependencies
+sudo pacman -Syu --needed base-devel libx11 libxinerama libxft xcb-util xcb-util-wm
+# Build and install
+cd dwm-btw/dwm
+make clean
+sudo make install
+```
+
+### Debian/Ubuntu
+```
+sudo apt update
+sudo apt install build-essential libx11-dev libxinerama-dev libxft-dev libxcb-util0-dev
+cd dwm-btw/dwm
+make clean
+sudo make install
 ```
 
 ---
 
-## Dependencies (Arch Linux)
+## Dependencies (check your pkg manager)
 
-* `xcb-util`, `libx11`, `libxinerama`, `libxft`
+* libx11 / libx11-dev
+
+* libxinerama / libxinerama-dev
+
+* libxft / libxft-dev
+
+* xcb-util (or libxcb-util)
 
 ---
 
@@ -115,13 +132,14 @@ sudo make clean install
 
 ## Screenshots / GIFs
 
+<video><source src='assets/dwm.mp4'></video>
+
 ![dwm](assets/dwm.png)
 
 ![preview](assets/preview.png)
 
 ---
 
----
 
 ## Contributions
 
@@ -142,4 +160,9 @@ Based in `suckless.org` — thanks to the `dwm` community.
 
 ## Notes
 
-- Delete the `config.h` before compile. 
+- If you keep a config.h in the folder, it will override config.def.h at compile time. If you want a clean start, remove config.h or regenerate it from config.def.h.
+
+- If make install complains about missing headers, install the -dev packages for your distro.
+
+- To make the bar read colors from Xresources, ensure you load .Xresources with xrdb ~/.Xresources before starting dwm.
+
