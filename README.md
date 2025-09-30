@@ -6,15 +6,15 @@
 
 ## Table of Contents
 
-- [Description](#Description)
-- [Content](#Content)
-- [Features](#Features)
-- [Installation](#Installation)
-- [Dependencies](#Dependencies)
-- [Patching and configuration](#Patching and configuration)
-- [Contributions](#Contributions)
-- [Credits](#Credits)
-- [Notes](#Notes)
+- [Description](##Description)
+- [Content](##Content)
+- [Features](##Features)
+- [Installation](##Installation)
+- [Dependencies](##Dependencies)
+- [Patching and configuration](##Patching and configuration)
+- [Contributions](##Contributions)
+- [Credits](##Credits)
+- [Notes](##Notes)
 
 ---
 
