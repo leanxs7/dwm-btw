@@ -55,6 +55,8 @@ static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just 
 static const Rule rules[] = {
   /* The command to search classes:  xprop | grep "CLASS" */
   /* class                                instance  title           tags mask         isfloating  isterminal  noswallow  monitor */
+	{ "kitty",                              NULL,     NULL,           0,                 0,          1,           0,        -1 },
+	{ "Alacritty",                          NULL,     NULL,           0,                 0,          1,           0,        -1 },
 	{ "Chromium",                           NULL,     NULL,           1 << 1,            0,          0,           0,        -1 },
 	{ "Thunar",                             NULL,     NULL,           1 << 2,            0,          0,           0,        -1 },
 	{ "obsidian",                           NULL,     NULL,           1 << 4,            0,          0,           0,        -1 },
@@ -64,9 +66,7 @@ static const Rule rules[] = {
 	{ "discord",                            NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
 	{ "todoist-nativefier-6c11dd",          NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
 	{ "pavucontrol",                        NULL,     NULL,          (1 << 7) | (0),     0,          0,           0,        -1 },
-	{ "Alacritty",                          NULL,     NULL,           0,                 0,          1,           0,        -1 },
-	{ "kitty",                              NULL,     NULL,           0,                 0,          1,           0,        -1 },
-	{ NULL,        NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ "rog-control-center",                 NULL,     NULL,           1 << 7,            1,          0,           0,        -1 },
 };
 
 /* layout(s) */
