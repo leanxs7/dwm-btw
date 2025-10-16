@@ -65,7 +65,7 @@ static const Rule rules[] = {
 	{ "euphonica",                          NULL,     NULL,           1 << 5,            0,          0,           0,        -1 },
 	{ "discord",                            NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
 	{ "todoist-nativefier-6c11dd",          NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
-	{ "pavucontrol",                        NULL,     NULL,          (1 << 7) | (0),     0,          0,           0,        -1 },
+	{ "pavucontrol",                        NULL,     NULL,           1 << 7,            0,          0,           0,        -1 },
 	{ "rog-control-center",                 NULL,     NULL,           1 << 7,            1,          0,           0,        -1 },
 };
 
