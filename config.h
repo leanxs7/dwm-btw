@@ -57,6 +57,7 @@ static const Rule rules[] = {
   /* class                                instance  title           tags mask         isfloating  isterminal  noswallow  monitor */
 	{ "kitty",                              NULL,     NULL,           0,                 0,          1,           0,        -1 },
 	{ "Alacritty",                          NULL,     NULL,           0,                 0,          1,           0,        -1 },
+	{ "Music",                              NULL,     NULL,           0,                 1,          0,           0,        -1 },
 	{ "Chromium",                           NULL,     NULL,           1 << 1,            0,          0,           0,        -1 },
 	{ "Thunar",                             NULL,     NULL,           1 << 2,            0,          0,           0,        -1 },
 	{ "obsidian",                           NULL,     NULL,           1 << 4,            0,          0,           0,        -1 },
@@ -64,8 +65,8 @@ static const Rule rules[] = {
 	{ "Spotify",                            NULL,     NULL,           1 << 5,            0,          0,           0,        -1 },
 	{ "euphonica",                          NULL,     NULL,           1 << 5,            0,          0,           0,        -1 },
 	{ "discord",                            NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
-	{ "todoist-nativefier-6c11dd",          NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
-	{ "pavucontrol",                        NULL,     NULL,          (1 << 7) | (0),     0,          0,           0,        -1 },
+	{ "todoist-nativefier-a2ca46",          NULL,     NULL,           1 << 6,            0,          0,           0,        -1 },
+	{ "pavucontrol",                        NULL,     NULL,           1 << 7,            0,          0,           0,        -1 },
 	{ "rog-control-center",                 NULL,     NULL,           1 << 7,            1,          0,           0,        -1 },
 };
 
@@ -115,7 +116,7 @@ static const char *terminal [] = { "alacritty", NULL };
 static const char *subterm  [] = { "kitty", NULL };
 static const char *filemg   [] = { "thunar", NULL };
 static const char *browser  [] = { "chromium", NULL };
-static const char *ytmusic  [] = { "youtube-music", NULL };  
+static const char *dwmusic  [] = { "/home/s7/.config/suckless/scripts/apps/dwmmusic.sh", NULL };  
 static const char *screensh [] = { "flameshot", "gui", NULL}; 
 static const char *xcolorpk [] = { "/home/s7/.config/suckless/scripts/apps/colorpicker.sh", NULL}; 
 // static const char *music    [] = { "ncmpcpp", NULL };  
@@ -156,7 +157,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = subterm  } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = filemg   } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser  } },
-	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = ytmusic  } },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = dwmusic  } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screensh } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = windows  } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = xcolorpk } },
